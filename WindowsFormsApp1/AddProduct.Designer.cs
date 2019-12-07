@@ -1,6 +1,6 @@
 ﻿namespace Lesson9_2
 {
-    partial class TovarList
+    partial class AddTovar
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.nameTovar = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.categoryValue = new System.Windows.Forms.ComboBox();
+            this.text = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.leftLast = new System.Windows.Forms.Button();
             this.changeImg = new System.Windows.Forms.OpenFileDialog();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(49, 255);
+            this.button1.Location = new System.Drawing.Point(36, 212);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 34);
+            this.button1.Size = new System.Drawing.Size(167, 34);
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить изображение";
             this.button1.UseVisualStyleBackColor = true;
@@ -78,29 +79,29 @@
             this.nameTovar.Text = "товар";
             this.nameTovar.Enter += new System.EventHandler(this.nameTovar_TextChanged);
             // 
-            // comboBox1
+            // categoryValue
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.categoryValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryValue.FormattingEnabled = true;
+            this.categoryValue.Items.AddRange(new object[] {
             "Сендвичи",
             "Сырники",
             "Торты",
             "Классический кофе",
             "Чай",
             "Альтернативный кофе"});
-            this.comboBox1.Location = new System.Drawing.Point(254, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 5;
+            this.categoryValue.Location = new System.Drawing.Point(254, 44);
+            this.categoryValue.Name = "categoryValue";
+            this.categoryValue.Size = new System.Drawing.Size(204, 21);
+            this.categoryValue.TabIndex = 5;
             // 
-            // textBox2
+            // text
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 99);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 107);
-            this.textBox2.TabIndex = 6;
+            this.text.Location = new System.Drawing.Point(254, 99);
+            this.text.Multiline = true;
+            this.text.Name = "text";
+            this.text.Size = new System.Drawing.Size(204, 107);
+            this.text.TabIndex = 6;
             // 
             // label2
             // 
@@ -111,34 +112,45 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Состав";
             // 
-            // button2
+            // leftLast
             // 
-            this.button2.Location = new System.Drawing.Point(254, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(204, 34);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Добавить товар";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.leftLast.Location = new System.Drawing.Point(127, 272);
+            this.leftLast.Name = "leftLast";
+            this.leftLast.Size = new System.Drawing.Size(204, 34);
+            this.leftLast.TabIndex = 8;
+            this.leftLast.Text = "Вернуться назад";
+            this.leftLast.UseVisualStyleBackColor = true;
+            this.leftLast.Click += new System.EventHandler(this.left);
             // 
             // changeImg
             // 
             this.changeImg.FileName = "openFileDialog1";
             // 
-            // TovarList
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(254, 212);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 34);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Добавить продукт";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // AddTovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 318);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.leftLast);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.text);
+            this.Controls.Add(this.categoryValue);
             this.Controls.Add(this.nameTovar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox);
-            this.Name = "TovarList";
+            this.Name = "AddTovar";
             this.Text = "AddTovar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TovarList_FormClosed);
             this.Load += new System.EventHandler(this.TovarList_Load);
@@ -154,10 +166,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameTovar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox categoryValue;
+        private System.Windows.Forms.TextBox text;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button leftLast;
         private System.Windows.Forms.OpenFileDialog changeImg;
+        private System.Windows.Forms.Button button2;
     }
 }

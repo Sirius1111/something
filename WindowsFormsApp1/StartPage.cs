@@ -13,7 +13,6 @@ namespace Lesson9_2
     public partial class StartPage : Form
     {
 
-        TovarList tovarList = new TovarList();
 
 
         public StartPage()
@@ -24,7 +23,7 @@ namespace Lesson9_2
         private void Button1_Click(object sender, EventArgs e)
         {
             Hide();
-            TovarList tovarList = new TovarList();
+            AddTovar tovarList = new AddTovar();
             tovarList.Show();
         }
 

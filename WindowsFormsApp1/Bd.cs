@@ -5,20 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Задание_9._2
+namespace Lesson9_2
 {
     class Bd
     {
-        string path = @"E:\programming\c#\app\git\cs\data\";
-        string line;
-
-
-
-        //public string ReadBd(string name){
-        //   var str =  File.ReadAllText(path + name);
-        //     return str;
-        // }
-
+        string path = "E:/programming/c#/git/WindowsFormsApp1/data/";
         public string ReadBd(string name)
         {
             string str = "";
@@ -33,9 +24,9 @@ namespace Задание_9._2
         }
 
 
-        void WriteBd(string name, string str = "Value")
+        public void WriteBd(string name, string str = "Value")
         {
-            using (StreamWriter sw = new StreamWriter(path + "/" + name + ".txt", true, System.Text.Encoding.UTF8))
+            using (StreamWriter sw = new StreamWriter(path + name + ".txt", true, System.Text.Encoding.UTF8))
             {
                 sw.WriteLine(str);
             }

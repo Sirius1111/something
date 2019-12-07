@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace Lesson9_2
 {
-    public partial class TovarList : Form
+    public partial class AddTovar : Form
     {
-        public TovarList()
+        Bd bd = new Bd();
+        public AddTovar()
         {
             InitializeComponent();
         }
@@ -45,11 +46,39 @@ namespace Lesson9_2
         private void button2_Click(object sender, EventArgs e)
         {
 
+            Coffee coffee = new Coffee();
+            coffee.name = nameTovar.Text;
+            coffee.category = categoryValue.SelectedItem.ToString();
+            coffee.description = text.Text;
+            coffee.urlImg = pictureBox.ImageLocation;
+            coffee.info = new string[]{ coffee.name, coffee.category, coffee.description, coffee.urlImg };
+
+
+            // проверка полей на пустоту 
+            //
+            // nameTovar.Text;
+            // categoryValue.SelectedItem.ToString();
+            // text.Text;
+            // pictureBox.ImageLocation; 
+
+            string dataProduct = coffee.getInfo(coffee.info);
+            bd.WriteBd("data", dataProduct);
+
+            //
+            // выполнить сброс всех данных и вывести messageBox
+            // 
         }
 
         private void TovarList_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void left(object sender, EventArgs e)
+        {
+            Hide();
+            StartPage s = new StartPage();
+            s.Show();
         }
     }
 }

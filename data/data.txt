@@ -1,2 +1,2 @@
-data1
-data2
+﻿n,n,m|Торты|n,n,m|E:\programming\c#\app\Lesson-9_part-2\image\defaultImage.jpg
+sdasd|Сырники|asdasd|E:\programming\c#\app\Lesson-9_part-2\image\03.jpg
